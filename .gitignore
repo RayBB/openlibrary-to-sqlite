@@ -1,3 +1,7 @@
+# Project specific 
+openlibrary_works.sqlite3
+ol_dump_works_latest.txt.gz
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
