@@ -34,10 +34,10 @@ def load_database(con, data_file):
             row_arr = []
             for key in KEYS_FROM_FIRST_22_MILLION:
                 v = cleaned_row_json.get(key)
-                if v is None:
+                if not isinstance(v,list):
                     row_arr.append(v)
                 else:
-                    row_arr.append(str(v))
+                    row_arr.append(str(v).replace("'",'"'))
             # TODO: create new columns as they are encountered instead of defining them all at the top
             batch.append(row_arr)
             # this 1 million number can be decreased. That will cause less memory usage but slower processing
