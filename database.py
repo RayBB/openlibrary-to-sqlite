@@ -5,11 +5,18 @@ from tqdm import tqdm
 import gzip
 from transform_works import transform_row
 
+# Keys from works
 KEYS_FROM_FIRST_22_MILLION = ['title', 'links', 'permission', 'subject_times', 'dewey_number', 
 'subject_people', 'description', 'excerpts', 'first_sentence', 'remote_ids', 'authors', 
 'location', 'subtitle', 'type', 'first_publish_date', 'covers', 'lc_classifications', 
 'subjects', 'subject_places', 'last_modified', 'cover_edition', 'key', 'created', 
 'ospid', 'notifications', 'genres', 'works', 'translated_titles', 'notes', 'series', 'original_languages', 'ocaid']
+
+# Keys from authors, but doesn't work for some reason
+# KEYS_FROM_FIRST_22_MILLION = ['publish_places', 'source_records', 'notes', 'subject_time', 'marc', 'website_name', 'numeration', 'ocaid', 'type', 'personal_name', 'subtitle', 'last_modified', 'photograph', 'publish_date', 'website', 'comment', 'tags', 'subject_place', 'remote_ids', 'number_of_pages', 'created', 'publish_country', 'pagination', 'fuller_name', 'oclc_numbers', 'contributions', 'location', 'title', 'create', 'covers', 'id_viaf', 'dewey_decimal_class', 'photos', 'series', 'role', 'subjects', 'bio', 'title_prefix', 'links', 'entity_type', 'wikipedia', 'publishers', 'authors', 'body', 'works', 'lc_classifications', 'birth_date', 'edition_name', 'id_wikidata', 'entiy_type', 'revision', 'alternate_names', 'date', 'death_date', 'id_librarything', 'name', 'by_statement', 'latest_revision', 'genres', 'other_titles', 'key', 'languages', 'lccn']
+# Keys from authors that are useful to me
+# KEYS_FROM_FIRST_22_MILLION = ['key', 'name', 'title', 'birth_date', 'death_date']
+# ESTIMATED_AUTHORS = 12866037
 
 def create_works_database(destination):
     con=sqlite3.connect(destination)

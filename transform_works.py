@@ -16,7 +16,7 @@ def parse_everything_in_work(work):
             # by default get the "value" key otherwise get the "key" key
             output[key] = value.get("value", value.get("key"))
         elif isinstance(value, list):
-            if isinstance(value[0], dict):
+            if len(value) > 0 and isinstance(value[0], dict):
                 type_value = value[0].get('type', {})
                 if type_value == '/type/author_role' or type_value.get('key') == '/type/author_role':
                     output[key] = parse_authors_array(value)
